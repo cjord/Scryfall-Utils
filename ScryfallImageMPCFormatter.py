@@ -1,6 +1,9 @@
 # author: Connor Jordan
 # date: April 2019
 
+# this script formats local image files grabbed from partner script ScryfallImageGrab.py
+# for use of making proxy cards for casual play (NOT FOR SALE) on https://www.makeplayingcards.com/
+
 import cv2
 import numpy as np
 import os

@@ -1,6 +1,11 @@
 # author: Connor Jordan
 # date: April 2019
 
+# this script grabs high qualily scans from https://scryfall.com/ using their API
+# and saves the images locally to be modified with partner script ScryfallImageMPCFormatter
+# this loads lists of cards inputted in the format of https://www.mtggoldfish.com/ output
+# or many other Magic the Gathering deck/collection 
+
 import requests
 import urllib
 import json
@@ -20,7 +25,7 @@ out_file = open("out.txt", "w")
 
 for line in cards_file:
 	# parse input
-	regex = re.compile(r"^(\d*)x?([a-zA-Z',\/ \-]*)\[?(\w*).*$")
+	regex = re.compile(r"^(\d*)?x?([a-zA-Z',\/ \-]*)\[?(\w*).*$")
 	matches = regex.findall(line)[0]
 
 	quantity = matches[0]
